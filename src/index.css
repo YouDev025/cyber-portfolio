@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cyber-dark: #0a0a0a;
+  --color-cyber-light: #1a1a1a;
+  --color-cyber-neon: #00ff41;
+  --color-cyber-accent: #00ccff;
+  --color-cyber-alert: #ff0055;
+
+  --font-mono: "JetBrains Mono", monospace;
+  --font-sans: "Inter", sans-serif;
+
+  --animate-glitch: glitch 1s linear infinite;
+
+  @keyframes glitch {
+
+    2%,
+    64% {
+      transform: translate(2px, 0) skew(0deg);
+    }
+
+    4%,
+    60% {
+      transform: translate(-2px, 0) skew(0deg);
+    }
+
+    62% {
+      transform: translate(0, 0) skew(5deg);
+    }
+  }
+}
+
+/* Fonts and global styles */
+@layer base {
+  body {
+    @apply bg-cyber-dark text-white font-sans overflow-x-hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-mono;
+  }
+}
+
+.glitch-text {
+  text-shadow: 2px 0 var(--color-cyber-neon), -2px 0 var(--color-cyber-alert);
+}
